@@ -50,7 +50,7 @@ export default function Header() {
         >
           <ul className="h-full w-[150px] md:w-full flex items-center justify-center gap-5 flex-col md:flex-row">
             <li>
-              <div className="dropdown">
+              <div className="dropdown  dropdown-hover hover:bg-none">
                 <label tabIndex={0}>Free Games</label>
                 <ul
                   tabIndex={0}
