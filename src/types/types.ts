@@ -47,7 +47,7 @@ export interface InfoSingleGame {
   id: number;
   platform: string;
   publisher: string;
-  release_date: string;
+  release_date: Date;
   short_description: string;
   thumbnail: string;
   title: string;

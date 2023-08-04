@@ -66,7 +66,9 @@ export default function Recomendations() {
   if (!data || data.length < 3) {
     return (
       <>
-        <h2 className="font-bold">Personalized Recomendations</h2>
+        <h2 className="font-bold text-neutral-content">
+          Personalized Recomendations
+        </h2>
         <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4">
           {[...Array(3)].map((_, index) => (
             <div key={index} className="flex items-center justify-center h-64">
@@ -81,7 +83,9 @@ export default function Recomendations() {
   // Renderiza los componentes CardGame solo si los datos son válidos.
   return (
     <>
-      <h2 className="font-bold">Personalized Recomendations</h2>
+      <h2 className="font-bold text-neutral-content">
+        Personalized Recomendations
+      </h2>
       <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4">
         {cardData.map((card) => (
           <CardGame key={card.id} {...card} />

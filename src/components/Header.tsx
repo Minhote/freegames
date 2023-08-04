@@ -41,7 +41,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex flex-wrap items-center justify-between bg-neutral px-3 py-1  h-[50px]  md:h-auto relative">
+      <header className="flex flex-wrap items-center justify-between bg-neutral px-3 py-1  h-[50px]  md:h-auto relative border-b-[1px]">
         <h1 className="text-xl font-bold text-neutral-content">FreeGames</h1>
         <nav
           className={`absolute right-0 top-[50px] md:static transition-all duration-500  max-md:z-10 ${
@@ -50,87 +50,141 @@ export default function Header() {
         >
           <ul className="h-full w-[150px] md:w-full flex items-center justify-center gap-5 flex-col md:flex-row">
             <li>
-              <div className="dropdown  dropdown-hover hover:bg-none">
-                <label tabIndex={0}>Free Games</label>
+              <div className="dropdown dropdown-hover hover:bg-none">
+                <label
+                  tabIndex={0}
+                  className="text-neutral-content font-semibold"
+                >
+                  Free Games
+                </label>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
+                  className="dropdown-content z-[1] menu p-2 shadow bg-neutral rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
                 >
                   <li className="group">
-                    <a className="group-hover:font-medium">MMORPG</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      MMORPG
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Shooter</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Shooter
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Anime</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Anime
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Strategy</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Strategy
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Fantasy</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Fantasy
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Sci-Fi</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Sci-Fi
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Racing</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Racing
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Social</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Social
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Sports</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Sports
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Games</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Games
+                    </a>
                   </li>
                 </ul>
               </div>
             </li>
             <li>
               <div className="dropdown dropdown-hover hover:bg-none">
-                <label tabIndex={0}>Browser Games</label>
+                <label
+                  tabIndex={0}
+                  className="text-neutral-content font-semibold"
+                >
+                  Browser Games
+                </label>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
+                  className="dropdown-content z-[1] menu p-2 shadow bg-neutral rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
                 >
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser MMORPG</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser MMORPG
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser Shooter</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser Shooter
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser Anime</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser Anime
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser Strategy</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser Strategy
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser Fantasy</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser Fantasy
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser Sci-Fi</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser Sci-Fi
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser Racing</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser Racing
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser Social</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser Social
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser Sports</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser Sports
+                    </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-medium">Browser Games</a>
+                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                      Browser Games
+                    </a>
                   </li>
                 </ul>
               </div>
             </li>
-            <li className="py-1">Most Popuplar</li>
-            <li className="py-1">Top 2023</li>
+            <li className="py-1 text-neutral-content font-semibold">
+              Most Popuplar
+            </li>
+            <li className="py-1 text-neutral-content font-semibold">
+              Top 2023
+            </li>
           </ul>
         </nav>
         <label className="swap swap-rotate">

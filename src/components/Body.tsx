@@ -4,11 +4,11 @@ import Recomendations from "./Recomendations";
 
 export default function () {
   return (
-    <main className="px-20 py-2 ">
+    <main className="px-20 py-2 bg-neutral">
       <div className="flex flex-col gap-2 items-start">
         <Recomendations />
       </div>
-      <div className="flex gap-3 flex-wrap">
+      <div className="flex flex-wrap gap-4">
         <RecentlyAdded />
         <MostPlayed />
       </div>

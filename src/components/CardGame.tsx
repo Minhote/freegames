@@ -27,7 +27,7 @@ const CardGame: React.FC<CardGameProps> = (props) => {
             muted
             loop
             preload="none"
-            className="absolute inset-0 hidden group-hover:block h-full w-full z-10 "
+            className="absolute inset-0 hidden group-hover:block z-10 object-cover h-full w-full"
           >
             <source
               src={`https://www.freetogame.com/g/${id}/videoplayback.webm`}
@@ -36,15 +36,15 @@ const CardGame: React.FC<CardGameProps> = (props) => {
             <p>Tu navegador no soporta el elemento de video.</p>
           </video>
         ) : (
-          <p className="absolute inset-0 hidden group-hover:flex h-full w-full z-10 items-center justify-center">
+          <p className="absolute inset-0 hidden group-hover:flex h-full w-full z-10 items-center justify-center text-neutral-content">
             Vista previa no disponible.
           </p>
         )}
       </picture>
 
-      <div className="flex  justify-between  items-center p-3 bg-neutral text-neutral-content rounded-b-xl group-hover:rounded-t-xl">
+      <div className="flex  justify-between  items-center p-3 bg-primary text-primary-content rounded-b-xl group-hover:rounded-t-xl">
         <p className="font-bold text-base">{title}</p>
-        <span className="py-2 px-3 bg-base-100 text-base-content font-bold rounded-md cursor-default">
+        <span className="py-2 px-3 bg-base-100 text-primary font-bold rounded-md cursor-default">
           Free
         </span>
       </div>
