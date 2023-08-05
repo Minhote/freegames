@@ -11,7 +11,7 @@ const ListItemGame: React.FC<InfoSingleGame> = (props) => {
   const { genre, platform, thumbnail, title, short_description, id } = props;
 
   return (
-    <div className="bg-primary text-primary-content rounded-md py-2 px-4  group  flex w-full flex-wrap gap-4 items-center justify-between max-sm:flex-col max-sm:gap-8 max-sm:py-6">
+    <div className="bg-primary text-primary-content rounded-md py-2 px-4  group  flex w-full flex-wrap gap-4 items-center justify-between  transition-all duration-500 hover:z-10 hover:scale-105 max-sm:flex-col  max-sm:gap-8 max-sm:py-6">
       <picture className="relative h-24 w-[min(100px,30%)] flex-initial max-sm:w-full max-sm:h-52 max-sm:rounded-md max-sm:overflow-hidden">
         <img
           src={thumbnail}
@@ -26,7 +26,7 @@ const ListItemGame: React.FC<InfoSingleGame> = (props) => {
             muted
             loop
             preload="none"
-            className="absolute inset-0 hidden group-hover:block z-10 object-cover h-full w-full"
+            className="absolute inset-0 hidden group-hover:block z-10 object-fill h-full w-full"
           >
             <source
               src={`https://www.freetogame.com/g/${id}/videoplayback.webm`}

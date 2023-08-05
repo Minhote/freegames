@@ -12,7 +12,7 @@ const CardGame: React.FC<CardGameProps> = (props) => {
   const { thumbnail, title, id } = props;
 
   return (
-    <div className="flex flex-col group rounded-xl overflow-hidden">
+    <div className="flex flex-col group rounded-xl overflow-hidden transition-all duration-500 hover:scale-105">
       <picture className="h-3/4 w-full relative ">
         <img
           src={thumbnail}
@@ -27,7 +27,7 @@ const CardGame: React.FC<CardGameProps> = (props) => {
             muted
             loop
             preload="none"
-            className="absolute inset-0 hidden group-hover:block z-10 object-cover h-full w-full"
+            className="absolute inset-0 hidden group-hover:block z-10 object-fill h-full w-full"
           >
             <source
               src={`https://www.freetogame.com/g/${id}/videoplayback.webm`}

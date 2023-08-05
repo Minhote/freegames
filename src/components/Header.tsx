@@ -7,7 +7,7 @@ export default function Header() {
 
   const [isNavVisible, setIsNavVisible] = useState(false);
 
-  const daisyThemes = ["winter", "luxury"];
+  const daisyThemes = ["luxury", "winter"];
 
   useEffect(() => {
     localStorage.setItem("theme", `${theme}`);
@@ -41,8 +41,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex flex-wrap items-center justify-between bg-neutral px-3 py-1  h-[50px]  md:h-auto relative border-b-[1px]">
-        <h1 className="text-xl font-bold text-neutral-content">FreeGames</h1>
+      <header className="flex flex-wrap items-center justify-between bg-primary px-3 py-1  h-[50px]  md:h-auto relative border-b-[1px]">
+        <h1 className="text-xl font-bold text-primary-content">FreeGames</h1>
         <nav
           className={`absolute right-0 top-[50px] md:static transition-all duration-500  max-md:z-10 ${
             isNavVisible ? "max-md:translate-x-0" : "max-md:translate-x-full"
@@ -53,61 +53,61 @@ export default function Header() {
               <div className="dropdown dropdown-hover hover:bg-none">
                 <label
                   tabIndex={0}
-                  className="text-neutral-content font-semibold"
+                  className="text-primary-content font-semibold"
                 >
                   Free Games
                 </label>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-neutral rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
+                  className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
                 >
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       MMORPG
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Shooter
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Anime
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Strategy
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Fantasy
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Sci-Fi
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Racing
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Social
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Sports
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Games
                     </a>
                   </li>
@@ -118,71 +118,71 @@ export default function Header() {
               <div className="dropdown dropdown-hover hover:bg-none">
                 <label
                   tabIndex={0}
-                  className="text-neutral-content font-semibold"
+                  className="text-primary-content font-semibold"
                 >
                   Browser Games
                 </label>
                 <ul
                   tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-neutral rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
+                  className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
                 >
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser MMORPG
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Shooter
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Anime
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Strategy
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Fantasy
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Sci-Fi
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Racing
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Social
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Sports
                     </a>
                   </li>
                   <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-neutral-content text-neutral-content">
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Games
                     </a>
                   </li>
                 </ul>
               </div>
             </li>
-            <li className="py-1 text-neutral-content font-semibold">
+            <li className="py-1 text-primary-content font-semibold">
               Most Popuplar
             </li>
-            <li className="py-1 text-neutral-content font-semibold">
+            <li className="py-1 text-primary-content font-semibold">
               Top 2023
             </li>
           </ul>
@@ -197,7 +197,7 @@ export default function Header() {
 
           {/* sun icon */}
           <svg
-            className="swap-on fill-current w-10 h-10"
+            className="swap-on fill-current w-10 h-10 text-primary-content"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -206,7 +206,7 @@ export default function Header() {
 
           {/* moon icon */}
           <svg
-            className="swap-off fill-current w-10 h-10"
+            className="swap-off fill-current w-10 h-10 text-primary-content"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >

@@ -24,7 +24,7 @@ export default function RecentlyAdded() {
   }, [LISTLENGTH]);
 
   return (
-    <div className="flex flex-col gap-1 flex-1 flex-wrap w-[min(26rem,100%)]">
+    <div className="flex flex-col gap-4 flex-1 flex-wrap w-[min(26rem,100%)]">
       <h2 className="text-lg font-semibold text-neutral-content w-full">
         Recently Added
       </h2>
