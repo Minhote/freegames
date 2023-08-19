@@ -20,3 +20,17 @@ export function createOptions<K extends string, V, T extends string>(
 export function randomNumber(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+// Separar Párrafos
+export function separateByRegExp(str: string) {
+  return str.split(/\r\n\r\n/g);
+}
+
+// Capitalizar las palabras
+export function toCapitalCase(inputString: string) {
+  const words = inputString.split(" ");
+  const capitalCaseWords = words.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+  return capitalCaseWords.join(" ");
+}

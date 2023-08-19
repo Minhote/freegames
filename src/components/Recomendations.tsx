@@ -1,7 +1,7 @@
 import axios from "axios";
 import CardGame from "./CardGame";
 import { useEffect, useState } from "react";
-import { BASEURL, UNIQUEID } from "../api/url";
+import { BASEURL, UNIQUEIDURL } from "../api/url";
 import { createOptions, randomNumber } from "../utils/helpers";
 //Video URL ejemplo https://www.freetogame.com/g/470/videoplayback.webm
 
@@ -37,7 +37,7 @@ async function fetchCardsGames(data: Array<any>) {
     //   },
     // };
 
-    const result = createOptions({ id: `${data[id].id}` }, UNIQUEID);
+    const result = createOptions({ id: `${data[id].id}` }, UNIQUEIDURL);
     return result;
   });
 

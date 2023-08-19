@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { CardGameProps } from "../types/types";
+import { GameInfoData } from "../types/types";
+import { useNavigate } from "react-router-dom";
 //Video URL ejemplo https://www.freetogame.com/g/470/videoplayback.webm
 
-const CardGame: React.FC<CardGameProps> = (props) => {
+const CardGame: React.FC<GameInfoData> = (props) => {
+  const navigate = useNavigate();
   const [videoError, setVideoError] = useState(false);
 
   const handleVideoError = () => {
@@ -12,7 +14,15 @@ const CardGame: React.FC<CardGameProps> = (props) => {
   const { thumbnail, title, id } = props;
 
   return (
-    <div className="flex flex-col group rounded-xl overflow-hidden transition-all duration-500 hover:scale-105">
+    <div
+      className="flex flex-col group rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 min-h-16"
+      onClick={() =>
+        navigate(`/${title.replace(/ /g, "-").toLowerCase()}`, {
+          state: { id },
+          replace: true,
+        })
+      }
+    >
       <picture className="h-3/4 w-full relative ">
         <img
           src={thumbnail}

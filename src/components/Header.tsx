@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
-
   const [isNavVisible, setIsNavVisible] = useState(false);
+
+  const navigate = useNavigate();
 
   const daisyThemes = ["luxury", "winter"];
 
@@ -41,11 +43,16 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex flex-wrap items-center justify-between bg-primary px-3 py-1  h-[50px]  md:h-auto relative border-b-[1px]">
-        <h1 className="text-xl font-bold text-primary-content">FreeGames</h1>
+      <header className="flex flex-wrap items-center justify-between bg-primary px-3 py-1  h-[50px]  md:h-auto sticky top-0 z-20 border-b-[1px]">
+        <h1
+          className="text-xl font-bold text-primary-content cursor-default"
+          onClick={() => navigate("/", { replace: true })}
+        >
+          FreeGames
+        </h1>
         <nav
-          className={`absolute right-0 top-[50px] md:static transition-all duration-500  max-md:z-10 ${
-            isNavVisible ? "max-md:translate-x-0" : "max-md:translate-x-full"
+          className={`absolute right-0 top-[50px] md:static transition-all duration-500  origin-right  max-md:bg-inherit ${
+            isNavVisible ? "max-md:block" : "max-md:hidden"
           }`}
         >
           <ul className="h-full w-[150px] md:w-full flex items-center justify-center gap-5 flex-col md:flex-row">

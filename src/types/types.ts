@@ -5,28 +5,130 @@ export enum sortedBy {
   Relevance = "relevance",
 }
 
-export interface CardGameProps {
+export const platform = ["browser", "pc", "all"];
+
+export const tags = [
+  "mmorpg",
+  "shooter",
+  "strategy",
+  "moba",
+  "racing",
+  "sports",
+  "social",
+  "sandbox",
+  "open-world",
+  "survival",
+  "pvp",
+  "pve",
+  "pixel",
+  "voxel",
+  "zombie",
+  "turn-based",
+  "first-person",
+  "third-Person",
+  "top-down",
+  "tank",
+  "space",
+  "sailing",
+  "side-scroller",
+  "superhero",
+  "permadeath",
+  "card",
+  "battle-royale",
+  "mmo",
+  "mmofps",
+  "mmotps",
+  "3d",
+  "2d",
+  "anime",
+  "fantasy",
+  "sci-fi",
+  "fighting",
+  "action-rpg",
+  "action",
+  "military",
+  "martial-arts",
+  "flight",
+  "low-spec",
+  "tower-defense",
+  "horror",
+  "mmorts",
+];
+// MMORPG = "mmorpg",
+// Shooter = "shooter",
+// Strategy = "strategy",
+// MOBA = "moba",
+// Racing = "racing",
+// Sports = "sports",
+// Social = "social",
+// Sandox = "sandbox",
+// OpenWorld = "open-world",
+// Survavial = "survival",
+// PVP = "pvp",
+// PVE = "pve",
+// Pixel = "pixel",
+// Voxel = "voxel",
+// Zombie = "zombie",
+// TurnBased = "turn-based",
+// FirstPerson = "first-person",
+// ThirdPerson = "third-Person",
+// TopDown = "top-down",
+// Tank = "tank",
+// Space = "space",
+// Sailing = "sailing",
+// SideScroller = "side-scroller",
+// SuperHero = "superhero",
+// PermaDeath = "permadeath",
+// Card = "card",
+// BattleRoyale = "battle-royale",
+// MMO = "mmo",
+// MMOFPS = "mmofps",
+// MMOTPS = "mmotps",
+// "3D" = "3d",
+// "2D" = "2d",
+// Anime = "anime",
+// Fantasy = "fantasy",
+// "SCI-Fi" = "sci-fi",
+// Fighting = "fighting",
+// "Action-RPG" = "action-rpg",
+// Action = "action",
+// Military = "military",
+// "Martial-Arts" = "martial-arts",
+// Flight = "flight",
+// "Low-Spec" = "low-spec",
+// "Tower-Defense" = "tower-defense",
+// Horror = "horror",
+// MMORTS = "mmorts",
+
+export interface GameInfoData {
+  id: number;
+  title: string;
+  thumbnail: string;
+  status: string;
+  short_description: string;
   description: string;
-  developer: string;
-  freetogame_profile_url: string;
   game_url: string;
   genre: string;
-  id: number;
-  minimum_system_requirements: {
-    os: string;
-    processor: string;
-    memory: string;
-    graphics: string;
-    storage: string;
-  };
   platform: string;
   publisher: string;
-  release_date: string;
-  screenshots: Array<any>;
-  short_description: string;
-  status: string;
-  thumbnail: string;
-  title: string;
+  developer: string;
+  release_date: Date;
+  freetogame_profile_url: string;
+  minimum_system_requirements: MinimumSystemRequirements;
+  screenshots: Screenshot[];
+}
+
+export interface MinimumSystemRequirements {
+  os: string;
+  processor: string;
+  memory: string;
+  graphics: string;
+  storage: string;
+}
+
+export interface Screenshot {
+  id: number;
+  image: string;
 }
 
 export type RequestOptions<K extends string, V, T extends string> = {

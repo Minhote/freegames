@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { createOptions } from "../utils/helpers";
 import { InfoSingleGame, sortedBy } from "../types/types";
 import { BASEURL } from "../api/url";
+import { useNavigate } from "react-router-dom";
 
 const optionsRecently = createOptions(
   { "sort-by": sortedBy.Relevance },
@@ -14,6 +15,7 @@ const LISTLENGTH = 4;
 export default function MostPlayed() {
   const [mostPlayed, setMostPlayed] = useState<Array<InfoSingleGame>>([]);
   const [videoError, setVideoError] = useState(false);
+  const navigate = useNavigate();
 
   const handleVideoError = () => {
     setVideoError(true);
@@ -38,6 +40,12 @@ export default function MostPlayed() {
             <div
               key={el.id}
               className="relative h-[13.5rem] group rounded-md overflow-hidden flex-wrap transition-all duration-500 hover:scale-105"
+              onClick={() =>
+                navigate(`/${el.title.replace(/ /g, "-").toLowerCase()}`, {
+                  state: { id: el.id },
+                  replace: true,
+                })
+              }
             >
               <picture className="inline-block h-full w-full">
                 <img
