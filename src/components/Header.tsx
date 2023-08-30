@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { category, platform, tag } from "../types/types";
 
 export default function Header() {
   const [theme, setTheme] = useState(
@@ -46,7 +47,7 @@ export default function Header() {
       <header className="flex flex-wrap items-center justify-between bg-primary px-3 py-1  h-[50px]  md:h-auto sticky top-0 z-20 border-b-[1px]">
         <h1
           className="text-xl font-bold text-primary-content cursor-default"
-          onClick={() => navigate("/", { replace: true })}
+          onClick={() => navigate("/")}
         >
           FreeGames
         </h1>
@@ -68,54 +69,139 @@ export default function Header() {
                   tabIndex={0}
                   className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
                 >
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/games/mmorpg", {
+                        state: {
+                          platform: platform.All,
+                          category: category.MMORPG,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       MMORPG
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/games/shooter", {
+                        state: {
+                          platform: platform.All,
+                          category: tag.Shooter,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Shooter
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/games/anime", {
+                        state: {
+                          platform: platform.All,
+                          category: category.Anime,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Anime
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/games/strategy", {
+                        state: {
+                          platform: platform.All,
+                          category: category.Strategy,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Strategy
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/games/fantasy", {
+                        state: {
+                          platform: platform.All,
+                          category: category.Fantasy,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Fantasy
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/games/sci-fi", {
+                        state: {
+                          platform: platform.All,
+                          category: category["SCI-Fi"],
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Sci-Fi
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/games/racing", {
+                        state: {
+                          platform: platform.All,
+                          category: category.Racing,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Racing
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/games/social", {
+                        state: {
+                          platform: platform.All,
+                          category: category.Social,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Social
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/games/sports", {
+                        state: {
+                          platform: platform.All,
+                          category: category.Sports,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Sports
-                    </a>
-                  </li>
-                  <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
-                      Games
                     </a>
                   </li>
                 </ul>
@@ -133,63 +219,298 @@ export default function Header() {
                   tabIndex={0}
                   className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
                 >
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/browser/mmorpg", {
+                        state: {
+                          platform: platform.Browser,
+                          category: category.MMORPG,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser MMORPG
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/browser/shooter", {
+                        state: {
+                          platform: platform.Browser,
+                          category: category.Shooter,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Shooter
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/browser/anime", {
+                        state: {
+                          platform: platform.Browser,
+                          category: category.Anime,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Anime
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/browser/strategy", {
+                        state: {
+                          platform: platform.Browser,
+                          category: category.Strategy,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Strategy
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/browser/fantasy", {
+                        state: {
+                          platform: platform.Browser,
+                          category: category.Fantasy,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Fantasy
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/browser/sci-fi", {
+                        state: {
+                          platform: platform.Browser,
+                          category: category["SCI-Fi"],
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Sci-Fi
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/browser/racing", {
+                        state: {
+                          platform: platform.Browser,
+                          category: category.Racing,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Racing
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/browser/social", {
+                        state: {
+                          platform: platform.Browser,
+                          category: category.Social,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Social
                     </a>
                   </li>
-                  <li className="group">
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/browser/sports", {
+                        state: {
+                          platform: platform.Browser,
+                          category: category.Sports,
+                        },
+                      })
+                    }
+                  >
                     <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
                       Browser Sports
-                    </a>
-                  </li>
-                  <li className="group">
-                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
-                      Browser Games
                     </a>
                   </li>
                 </ul>
               </div>
             </li>
-            <li className="py-1 text-primary-content font-semibold">
-              Most Popuplar
+            <li>
+              <div className="dropdown dropdown-hover hover:bg-none">
+                <label
+                  tabIndex={0}
+                  className="text-primary-content font-semibold"
+                >
+                  PC Games
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box flex flex-col items-start gap-1 max-md:-left-[160px]"
+                >
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/pc/mmorpg", {
+                        state: {
+                          platform: platform.PC,
+                          category: category.MMORPG,
+                        },
+                      })
+                    }
+                  >
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
+                      PC MMORPG
+                    </a>
+                  </li>
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/pc/shooter", {
+                        state: {
+                          platform: platform.PC,
+                          category: category.Shooter,
+                        },
+                      })
+                    }
+                  >
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
+                      PC Shooter
+                    </a>
+                  </li>
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/pc/anime", {
+                        state: {
+                          platform: platform.PC,
+                          category: category.Anime,
+                        },
+                      })
+                    }
+                  >
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
+                      PC Anime
+                    </a>
+                  </li>
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/pc/strategy", {
+                        state: {
+                          platform: platform.PC,
+                          category: category.Strategy,
+                        },
+                      })
+                    }
+                  >
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
+                      PC Strategy
+                    </a>
+                  </li>
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/pc/fantasy", {
+                        state: {
+                          platform: platform.PC,
+                          category: category.Fantasy,
+                        },
+                      })
+                    }
+                  >
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
+                      PC Fantasy
+                    </a>
+                  </li>
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/pc/sci-fi", {
+                        state: {
+                          platform: platform.PC,
+                          category: category["SCI-Fi"],
+                        },
+                      })
+                    }
+                  >
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
+                      PC Sci-Fi
+                    </a>
+                  </li>
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/pc/racing", {
+                        state: {
+                          platform: platform.PC,
+                          category: category.Racing,
+                        },
+                      })
+                    }
+                  >
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
+                      PC Racing
+                    </a>
+                  </li>
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/pc/social", {
+                        state: {
+                          platform: platform.PC,
+                          category: category.Social,
+                        },
+                      })
+                    }
+                  >
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
+                      PC Social
+                    </a>
+                  </li>
+                  <li
+                    className="group"
+                    onClick={() =>
+                      navigate("/pc/sports", {
+                        state: {
+                          platform: platform.PC,
+                          category: category.Sports,
+                        },
+                      })
+                    }
+                  >
+                    <a className="group-hover:font-bold group-hover:text-primary-content text-primary-content">
+                      PC Sports
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
-            <li className="py-1 text-primary-content font-semibold">
+            <li
+              className="py-1 text-primary-content font-semibold cursor-default"
+              onClick={() => navigate("/top")}
+            >
               Top 2023
             </li>
           </ul>

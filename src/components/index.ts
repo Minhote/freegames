@@ -1,0 +1,10 @@
+export { default as Body } from "./Body";
+export { default as CardGame } from "./CardGame";
+export { default as Footer } from "./Footer";
+export { default as Header } from "./Header";
+export { default as ListItemGame } from "./ListItemGame";
+export { default as MostPlayed } from "./MostPlayed";
+export { default as RecentlyAdded } from "./RecentlyAdded";
+export { default as Recomendations } from "./Recomendations";
+export { default as Poster } from "./Poster";
+export { default as DropMenu } from "./DropMenu";

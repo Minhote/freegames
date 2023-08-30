@@ -19,7 +19,6 @@ const ListItemGame: React.FC<InfoSingleGame> = (props) => {
       onClick={() =>
         navigate(`/${title.replace(/ /g, "-").toLowerCase()}`, {
           state: { id },
-          replace: true,
         })
       }
     >

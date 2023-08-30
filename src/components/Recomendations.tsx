@@ -88,7 +88,7 @@ export default function Recomendations() {
       </h2>
       <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4">
         {cardData.map((card) => (
-          <CardGame key={card.id} {...card} />
+          <CardGame key={card.id} {...card} replaceValue={false} />
         ))}
       </div>
     </>

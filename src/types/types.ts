@@ -5,7 +5,107 @@ export enum sortedBy {
   Relevance = "relevance",
 }
 
-export const platform = ["browser", "pc", "all"];
+export enum platform {
+  Browser = "browser",
+  PC = "pc",
+  All = "all",
+}
+
+export enum category {
+  MMORPG = "mmorpg",
+  Shooter = "shooter",
+  Strategy = "strategy",
+  MOBA = "moba",
+  Racing = "racing",
+  Sports = "sports",
+  Social = "social",
+  Sandox = "sandbox",
+  OpenWorld = "open-world",
+  Survavial = "survival",
+  PVP = "pvp",
+  PVE = "pve",
+  Pixel = "pixel",
+  Voxel = "voxel",
+  Zombie = "zombie",
+  TurnBased = "turn-based",
+  FirstPerson = "first-person",
+  ThirdPerson = "third-Person",
+  TopDown = "top-down",
+  Tank = "tank",
+  Space = "space",
+  Sailing = "sailing",
+  SideScroller = "side-scroller",
+  SuperHero = "superhero",
+  PermaDeath = "permadeath",
+  Card = "card",
+  BattleRoyale = "battle-royale",
+  MMO = "mmo",
+  MMOFPS = "mmofps",
+  MMOTPS = "mmotps",
+  "3D" = "3d",
+  "2D" = "2d",
+  Anime = "anime",
+  Fantasy = "fantasy",
+  "SCI-Fi" = "sci-fi",
+  Fighting = "fighting",
+  "Action-RPG" = "action-rpg",
+  Action = "action",
+  Military = "military",
+  "Martial-Arts" = "martial-arts",
+  Flight = "flight",
+  "Low-Spec" = "low-spec",
+  "Tower-Defense" = "tower-defense",
+  Horror = "horror",
+  MMORTS = "mmorts",
+}
+
+export enum tag {
+  MMORPG = "mmorpg",
+  Shooter = "shooter",
+  Strategy = "strategy",
+  MOBA = "moba",
+  Racing = "racing",
+  Sports = "sports",
+  Social = "social",
+  Sandox = "sandbox",
+  OpenWorld = "open-world",
+  Survavial = "survival",
+  PVP = "pvp",
+  PVE = "pve",
+  Pixel = "pixel",
+  Voxel = "voxel",
+  Zombie = "zombie",
+  TurnBased = "turn-based",
+  FirstPerson = "first-person",
+  ThirdPerson = "third-Person",
+  TopDown = "top-down",
+  Tank = "tank",
+  Space = "space",
+  Sailing = "sailing",
+  SideScroller = "side-scroller",
+  SuperHero = "superhero",
+  PermaDeath = "permadeath",
+  Card = "card",
+  BattleRoyale = "battle-royale",
+  MMO = "mmo",
+  MMOFPS = "mmofps",
+  MMOTPS = "mmotps",
+  "3D" = "3d",
+  "2D" = "2d",
+  Anime = "anime",
+  Fantasy = "fantasy",
+  "SCI-Fi" = "sci-fi",
+  Fighting = "fighting",
+  "Action-RPG" = "action-rpg",
+  Action = "action",
+  Military = "military",
+  "Martial-Arts" = "martial-arts",
+  Flight = "flight",
+  "Low-Spec" = "low-spec",
+  "Tower-Defense" = "tower-defense",
+  Horror = "horror",
+  MMORTS = "mmorts",
+}
 
 export const tags = [
   "mmorpg",
@@ -44,7 +144,6 @@ export const tags = [
   "fantasy",
   "sci-fi",
   "fighting",
-  "action-rpg",
   "action",
   "military",
   "martial-arts",
@@ -52,53 +151,7 @@ export const tags = [
   "low-spec",
   "tower-defense",
   "horror",
-  "mmorts",
 ];
-// MMORPG = "mmorpg",
-// Shooter = "shooter",
-// Strategy = "strategy",
-// MOBA = "moba",
-// Racing = "racing",
-// Sports = "sports",
-// Social = "social",
-// Sandox = "sandbox",
-// OpenWorld = "open-world",
-// Survavial = "survival",
-// PVP = "pvp",
-// PVE = "pve",
-// Pixel = "pixel",
-// Voxel = "voxel",
-// Zombie = "zombie",
-// TurnBased = "turn-based",
-// FirstPerson = "first-person",
-// ThirdPerson = "third-Person",
-// TopDown = "top-down",
-// Tank = "tank",
-// Space = "space",
-// Sailing = "sailing",
-// SideScroller = "side-scroller",
-// SuperHero = "superhero",
-// PermaDeath = "permadeath",
-// Card = "card",
-// BattleRoyale = "battle-royale",
-// MMO = "mmo",
-// MMOFPS = "mmofps",
-// MMOTPS = "mmotps",
-// "3D" = "3d",
-// "2D" = "2d",
-// Anime = "anime",
-// Fantasy = "fantasy",
-// "SCI-Fi" = "sci-fi",
-// Fighting = "fighting",
-// "Action-RPG" = "action-rpg",
-// Action = "action",
-// Military = "military",
-// "Martial-Arts" = "martial-arts",
-// Flight = "flight",
-// "Low-Spec" = "low-spec",
-// "Tower-Defense" = "tower-defense",
-// Horror = "horror",
-// MMORTS = "mmorts",
 
 export interface GameInfoData {
   id: number;
@@ -131,7 +184,11 @@ export interface Screenshot {
   image: string;
 }
 
-export type RequestOptions<K extends string, V, T extends string> = {
+export type RequestOptions<
+  K extends string,
+  V extends string,
+  T extends string
+> = {
   method: "GET";
   url: T;
   params: Record<K, V>; // Aquí usamos Record para definir el tipo de 'params'
@@ -153,4 +210,14 @@ export interface InfoSingleGame {
   short_description: string;
   thumbnail: string;
   title: string;
+}
+
+export interface fetchFilterParamsWithTag {
+  platform: string;
+  tag?: string | undefined;
+}
+
+export interface fetchFilterParamsWithCategory {
+  platform: string;
+  category?: string | undefined;
 }
