@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { separateByRegExp, toCapitalCase } from "../utils/helpers";
-import { sortedBy } from "../types/types";
+import { platformNames, sortedBy, tags } from "../types/types";
 
 interface Options {
   label: string;
@@ -10,18 +10,14 @@ interface Options {
 
 interface DropMenuProps {
   options: Array<Options>;
-  filterType: "platform" | "tag" | "sort-by";
+  filterType: "platform" | "tag" | "sort-by" | "top-category" | "top-platform";
 }
 
 const DropMenu = ({ options, filterType }: DropMenuProps) => {
   const location = useLocation();
-  // console.log(
-  //   location.search,
-  //   separateByRegExp(location.search, /[\?\=]/g),
-  //   separateByRegExp(location.search, /[\?\=]/g).slice(1)[1]
-  // );
   const [isOpen, setIsOpen] = useState(false);
-  // const [platformValue, setPlatformValue] = useState<platform>(platform.All);
+
+  let result = "";
 
   const titlePlatform =
     separateByRegExp(location.pathname, /\//g).slice(1).includes("games") &&
@@ -38,25 +34,78 @@ const DropMenu = ({ options, filterType }: DropMenuProps) => {
       ? "All Genres"
       : separateByRegExp(location.pathname, /\//g).slice(1)[1];
 
+  const titleTopPlatform =
+    separateByRegExp(location.pathname, /\//g).slice(1)[0] === "top" &&
+    filterType === "top-platform" &&
+    separateByRegExp(location.pathname, /\//g).slice(1).length === 1
+      ? "Browser and PC"
+      : separateByRegExp(location.pathname, /\//g).slice(1)[0] === "top" &&
+        filterType === "top-platform" &&
+        separateByRegExp(location.pathname, /\//g).slice(1).length === 2 &&
+        platformNames.includes(
+          separateByRegExp(location.pathname, /\//g).slice(1)[1]
+        )
+      ? separateByRegExp(location.pathname, /\//g).slice(1)[1]
+      : separateByRegExp(location.pathname, /\//g).slice(1)[0] === "top" &&
+        filterType === "top-platform" &&
+        separateByRegExp(location.pathname, /\//g).slice(1).length === 2 &&
+        !platformNames.includes(
+          separateByRegExp(location.pathname, /\//g).slice(1)[1]
+        )
+      ? "Browser and PC"
+      : separateByRegExp(location.pathname, /\//g).slice(1)[1];
+
+  const titleTopCategory =
+    separateByRegExp(location.pathname, /\//g).slice(1)[0] === "top" &&
+    filterType === "top-category" &&
+    separateByRegExp(location.pathname, /\//g).slice(1).length === 1
+      ? "Select Category"
+      : separateByRegExp(location.pathname, /\//g).slice(1)[0] === "top" &&
+        filterType === "top-category" &&
+        separateByRegExp(location.pathname, /\//g).slice(1).length === 2 &&
+        tags.includes(separateByRegExp(location.pathname, /\//g).slice(1)[1])
+      ? `Top ${separateByRegExp(location.pathname, /\//g).slice(1)[1]}`
+      : separateByRegExp(location.pathname, /\//g).slice(1)[0] === "top" &&
+        filterType === "top-category" &&
+        separateByRegExp(location.pathname, /\//g).slice(1).length === 2 &&
+        !tags.includes(separateByRegExp(location.pathname, /\//g).slice(1)[1])
+      ? "Select Category"
+      : `Top ${separateByRegExp(location.pathname, /\//g).slice(1)[2]}`;
+
+  if (filterType === "platform") {
+    result = titlePlatform;
+  } else if (filterType === "tag") {
+    if (titleTag === "mmorpg") {
+      result = titleTag.toUpperCase();
+    } else {
+      result = toCapitalCase(titleTag);
+    }
+  } else if (filterType === "sort-by") {
+    if (location.search === "") {
+      result = toCapitalCase(sortedBy.Relevance);
+    } else {
+      result = toCapitalCase(
+        separateByRegExp(location.search, /[\?\=]/g).slice(1)[1]
+      );
+    }
+  } else if (filterType === "top-category") {
+    result = toCapitalCase(titleTopCategory);
+  } else if (filterType === "top-platform") {
+    result =
+      titleTopPlatform === "pc"
+        ? titleTopPlatform.toUpperCase()
+        : titleTopPlatform === "browser"
+        ? toCapitalCase(titleTopPlatform)
+        : titleTopPlatform;
+  }
+
   return (
     <>
       <div
         className="flex gap-3 items-center relative px-3"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <span className="font-bold">
-          {filterType === "platform"
-            ? titlePlatform
-            : filterType === "tag"
-            ? titleTag === "mmorpg"
-              ? titleTag.toUpperCase()
-              : toCapitalCase(titleTag)
-            : filterType === "sort-by" && location.search === ""
-            ? toCapitalCase(sortedBy.Relevance)
-            : toCapitalCase(
-                separateByRegExp(location.search, /[\?\=]/g).slice(1)[1]
-              )}
-        </span>
+        <span className="font-bold min-w-[100px]">{result}</span>
         <div
           className={`border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-primary transition-all duration-300 ${
             !isOpen ? "rotate-0" : "rotate-180"

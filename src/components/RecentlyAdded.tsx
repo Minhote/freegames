@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { createOptions } from "../utils/helpers";
 import { BASEURL } from "../api/url";
 import { InfoSingleGame, sortedBy } from "../types/types";
-import ListItemGame from "./ListItemGame";
+import ListItemGame from "./MainListItemGame";
 
 const optionsRecently = createOptions(
   { "sort-by": sortedBy.ReleaseDate },

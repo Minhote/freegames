@@ -1,16 +1,11 @@
-import { useState } from "react";
 import { InfoSingleGame } from "../types/types";
 import { FaWindowMaximize, FaWindows } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import useVideoError from "../hooks/useVideoError";
 
-const ListItemGame: React.FC<InfoSingleGame> = (props) => {
-  const [videoError, setVideoError] = useState(false);
+const MainListItemGame: React.FC<InfoSingleGame> = (props) => {
   const navigate = useNavigate();
-
-  const handleVideoError = () => {
-    setVideoError(true);
-  };
-
+  const { videoError, setErrorTrue, setErrorFalse } = useVideoError();
   const { genre, platform, thumbnail, title, short_description, id } = props;
 
   return (
@@ -30,8 +25,8 @@ const ListItemGame: React.FC<InfoSingleGame> = (props) => {
         />
         {!videoError ? (
           <video
-            onCanPlay={() => setVideoError(false)}
-            onError={handleVideoError}
+            onCanPlay={() => setErrorFalse()}
+            onError={() => setErrorTrue()}
             autoPlay
             muted
             loop
@@ -75,20 +70,8 @@ const ListItemGame: React.FC<InfoSingleGame> = (props) => {
           Free
         </span>
       </div>
-      {/* 
-      Ejemplo de texto sobrante útil para despues
-      <div className="w-52 border p-2 mb-5 ">
-        <p className="overflow-hidden text-ellipsis whitespace-nowrap">
-          Este es un texto muy largo que no cabe en el contenedor, por lo que se
-          mostrará con puntos suspensivos al final.
-        </p>
-        <p className="whitespace-pre-wrap">
-          Este es un texto muy largo que no cabe en el contenedor, por lo que se
-          mostrará en varias líneas.
-        </p>
-      </div> */}
     </div>
   );
 };
 
-export default ListItemGame;
+export default MainListItemGame;

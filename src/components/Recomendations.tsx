@@ -27,16 +27,6 @@ async function fetchCardsGames(data: Array<any>) {
   }
 
   const optionsCards = Array.from(ids).map((id) => {
-    // return {
-    //   method: "GET",
-    //   url: "https://free-to-play-games-database.p.rapidapi.com/api/game",
-    //   params: { id: `${data[id].id}` },
-    //   headers: {
-    //     "X-RapidAPI-Key": "a0a09286c0mshbf1e816d2904e1ap1d212cjsn4727a13316d8",
-    //     "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
-    //   },
-    // };
-
     const result = createOptions({ id: `${data[id].id}` }, UNIQUEIDURL);
     return result;
   });

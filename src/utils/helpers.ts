@@ -47,10 +47,10 @@ export function toCapitalCase(inputString: string) {
 export async function fetchFilter(
   params: fetchFilterParamsWithTag | fetchFilterParamsWithCategory,
   // params: Record<keyof fetchFilterParams, string | undefined>,
-  search: string
+  search: string | Array<string>
 ) {
-  console.log(params, params != null, search === "");
-  if (params === null && search.length > 0) {
+  console.log(params, params != null, search.length > 0);
+  if (params === null && search.length > 0 && !Array.isArray(search)) {
     const sortKeyAndValue = separateByRegExp(location.search, /[\?\=]/g).slice(
       1
     );
@@ -62,7 +62,6 @@ export async function fetchFilter(
     return data;
   } else if (
     params !== null &&
-    // Object.entries(params).length === 1 &&
     search === "" &&
     Object.values(params).filter((el) => el != undefined).length === 1
   ) {
@@ -84,7 +83,6 @@ export async function fetchFilter(
         },
         BASEURL
       );
-      console.log(optionsFilter);
       const { data } = await axios.request(optionsFilter);
       return data;
     } else {
@@ -95,7 +93,7 @@ export async function fetchFilter(
       const { data } = await axios.request(optionsFilter);
       return data;
     }
-  } else if (params !== null && search !== "") {
+  } else if (params !== null && search !== "" && !Array.isArray(search)) {
     console.log("Acá con path de 1 y de 2");
     const paramsValue = Object.entries(params)
       .filter(([, value]) => value !== undefined)
@@ -111,5 +109,25 @@ export async function fetchFilter(
     console.log(paramsValue, URL, optionsFilter);
     const { data } = await axios.request(optionsFilter);
     return data;
+  } else if (params !== null && Array.isArray(search)) {
+    if (Object.keys(params).length === 1) {
+      const optionsFilter = createOptions(
+        { platform: params.platform, [search[0]]: search[1] },
+        BASEURL
+      );
+      const { data } = await axios.request(optionsFilter);
+      return data;
+    } else if (Object.keys(params).length === 2) {
+      const optionsFilter = createOptions(
+        {
+          platform: Object.values(params)[0],
+          category: Object.values(params)[1],
+          [search[0]]: search[1],
+        },
+        BASEURL
+      );
+      const { data } = await axios.request(optionsFilter);
+      return data;
+    }
   }
 }

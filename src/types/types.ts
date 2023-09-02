@@ -153,6 +153,8 @@ export const tags = [
   "horror",
 ];
 
+export const platformNames = ["browser", "pc", "Browser and PC"];
+
 export interface GameInfoData {
   id: number;
   title: string;

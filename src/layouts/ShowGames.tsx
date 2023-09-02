@@ -126,7 +126,7 @@ export default function ShowGames() {
           <h2 className="text-neutral-content font-bold text-3xl">
             Top Free Games for PC and Browser In 2023!
           </h2>
-          <span className="text-base-100">
+          <span className="text-neutral-content">
             <strong className="text-neutral-content">{games.length}</strong>{" "}
             free-to-play <strong className="text-neutral-content">games</strong>{" "}
             found in our games list

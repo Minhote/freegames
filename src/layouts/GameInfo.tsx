@@ -85,6 +85,7 @@ export default function GameInfo() {
       <>
         <Header />
         <main className="flex flex-wrap px-11 py-6 gap-5 items-start bg-neutral max-md:flex-col max-md:items-center">
+          <div className=""></div>
           <div className="flex flex-col gap-4 flex-initial w-80 sticky top-[6rem] z-10 max-md:static max-md:w-full">
             <span className="text-xs inline-flex items-center gap-2 md:hidden">
               <a

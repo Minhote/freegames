@@ -7,9 +7,7 @@ export default function Header() {
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
   const [isNavVisible, setIsNavVisible] = useState(false);
-
   const navigate = useNavigate();
-
   const daisyThemes = ["luxury", "winter"];
 
   useEffect(() => {

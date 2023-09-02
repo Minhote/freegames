@@ -1,5 +1,4 @@
 import React from "react";
-// import { GameInfoData } from "../types/types";
 import { useNavigate } from "react-router-dom";
 import useVideoError from "../hooks/useVideoError";
 //Video URL ejemplo https://www.freetogame.com/g/470/videoplayback.webm
