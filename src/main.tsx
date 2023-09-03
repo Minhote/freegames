@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ShowGames, Filter, GameInfo, TopGames } from "./layouts";
+import { ShowGames, GameInfo, TopGames } from "./layouts";
 import App from "./App.tsx";
 import "./index.css";
 
@@ -15,7 +15,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/browser/*" element={<ShowGames />} />
         <Route path="/games/*" element={<ShowGames />} />
         <Route path="/top/*" element={<TopGames />} />
-        <Route path="/filter" element={<Filter />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

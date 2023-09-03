@@ -185,7 +185,7 @@ export default function TopGames() {
   return (
     <>
       <Header />
-      <main className="bg-neutral px-20 py-5 flex flex-col gap-4">
+      <main className="bg-neutral px-20 py-5 flex flex-col gap-4 min-h-screen">
         <div className="flex flex-col gap-4">
           <h2 className="font-bold text-4xl text-neutral-contentv max-md:text-2xl max-sm:text-xl">
             {pathnameToArray.length === 1

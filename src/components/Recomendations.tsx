@@ -56,7 +56,7 @@ export default function Recomendations() {
   if (!data || data.length < 3) {
     return (
       <>
-        <h2 className="font-bold text-neutral-content">
+        <h2 className="font-bold text-neutral-content my-4">
           Personalized Recomendations
         </h2>
         <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4">
@@ -72,8 +72,8 @@ export default function Recomendations() {
 
   // Renderiza los componentes CardGame solo si los datos son válidos.
   return (
-    <>
-      <h2 className="font-bold text-neutral-content">
+    <div className="min-h-[250px] w-full">
+      <h2 className="font-bold text-neutral-content my-4">
         Personalized Recomendations
       </h2>
       <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-4">
@@ -81,6 +81,6 @@ export default function Recomendations() {
           <CardGame key={card.id} {...card} replaceValue={false} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
